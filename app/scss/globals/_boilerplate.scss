@@ -1,0 +1,78 @@
+@use "typography" as t;
+@use "colors" as c;
+@use "../util/" as u;
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Screen Reader Class
+.sr-only {
+  position: absolute !important;
+  margin: -1px !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+::selection {
+  background-color: c.$selection-bg;
+  color: c.$white;
+}
+
+::-moz-selection {
+  background-color: c.$selection-bg;
+  color: c.$white;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  font-family: t.$font;
+}
+
+body {
+  background: top left no-repeat, bottom right no-repeat;
+  background-image: url("../images/bg-pattern-top-mobile.svg"),
+    url("../images/bg-pattern-bottom-mobile.svg");
+  color: c.$magenta-color;
+  min-height: 100vh;
+  @include u.breakpoint-up(small) {
+    background-image: url("../images/bg-pattern-top-desktop.svg"),
+      url("../images/bg-pattern-bottom-desktop.svg");
+  }
+}
+
+main {
+  padding: u.rem(64) u.rem(32);
+
+  @include u.breakpoint-up(medium) {
+    padding: u.rem(80) u.rem(32);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}

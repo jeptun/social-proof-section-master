@@ -1,0 +1,23 @@
+@use "../util/" as u;
+
+$font: "League Spartan", sans-serif;
+
+h1,
+h2,
+h3 {
+  margin-bottom: u.rem(20);
+}
+
+p, blockquote {
+  line-height: 1.6;
+}
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  background-color: transparent;
+}
+ul{
+  list-style-type: none
+}
+

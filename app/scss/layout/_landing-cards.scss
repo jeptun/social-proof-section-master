@@ -1,0 +1,67 @@
+@use "../globals/" as g;
+@use "../util/" as u;
+
+.landing-cards-widget {
+  @include u.breakpoint-up(medium) {
+    display: flex;
+    gap: u.rem(20);
+    grid-column: 1 / 3;
+  }
+}
+.landing-cards {
+  position: relative;
+  background-color: g.$magenta-color;
+  padding: u.rem(20);
+  border-radius: u.rem(10);
+  color: g.$white;
+  @include u.breakpoint-up(medium) {
+    padding: u.rem(40);
+  }
+}
+.landing-cards:not(:first-child) {
+  margin-top: u.rem(39.2);
+
+  @include u.breakpoint-up(medium) {
+    margin-top: 0;
+  }
+}
+.landing-cards:nth-child(2) {
+  @include u.breakpoint-up(medium) {
+    top: u.rem(20);
+  }
+}
+
+.landing-cards:last-child {
+  @include u.breakpoint-up(medium) {
+    top: u.rem(40);
+  }
+}
+.landing-cards-figure {
+  display: flex;
+  align-items: center;
+  margin-bottom:  u.rem(15);
+}
+.landing-card-img {
+  width: u.rem(50);
+  height: u.rem(50);
+  border-radius: 50%;
+  margin-right: u.rem(15);
+}
+.landing-cards-figcaption {
+  padding: u.rem(15);
+}
+.landing-card-name {
+  font-size: u.rem(20);
+  font-weight: 700;
+}
+.landing-card-buyer {
+  color: g.$pink-color;
+  font-size: u.rem(20);
+  font-weight: 500;
+  line-height: 1.1;
+}
+.landing-card-story {
+  font-size: u.rem(16);
+  font-weight: 500;
+  line-height: 1.4;
+}

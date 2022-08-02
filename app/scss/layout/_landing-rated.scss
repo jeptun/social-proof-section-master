@@ -1,0 +1,56 @@
+@use "../globals/" as g;
+@use "../util/" as u;
+
+.landing-rated-wrapper {
+ margin: u.rem(52) 0;
+
+  @include u.breakpoint-up(medium) {
+   margin: 0;
+  }
+}
+.landing-rated-item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  padding: u.rem(17);
+  background-color: g.$lightGrayish-color;
+  margin: u.rem(15) 0;
+  border-radius: u.rem(8);
+
+  @include u.breakpoint-up(large) {
+    flex-direction: row;
+    padding: u.rem(23);
+    width: u.rem(450);
+  }
+}
+.landing-rated-item:nth-child(2) {
+  @include u.breakpoint-up(large) {
+    left: u.rem(60);
+  }
+}
+
+.landing-rated-item:last-child {
+  @include u.breakpoint-up(large) {
+    left: u.rem(120);
+  }
+}
+.landing-rated-star {
+  display: flex;
+  gap: u.rem(5);
+  margin-bottom: u.rem(15);
+
+  @include u.breakpoint-up(large) {
+    margin-bottom: 0;
+  }
+}
+
+.landing-rated-text {
+  font-size: u.rem(17);
+  font-weight: 700;
+  margin-left: 0;
+
+  @include u.breakpoint-up(large) {
+    margin-left: u.rem(40);
+  }
+}

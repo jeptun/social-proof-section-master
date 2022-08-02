@@ -1,0 +1,42 @@
+@use "../globals/" as g;
+@use "../util/" as u;
+
+.landing {
+  display: block;
+  max-width: u.rem(500);
+  margin: 0 auto;
+
+  @include u.breakpoint-up(medium) {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: u.rem(60);
+    margin: 0 auto;
+    max-width: u.rem(1200);
+  }
+}
+.landing-info {
+  text-align: center;
+
+  @include u.breakpoint-up(medium) {
+    max-width: u.rem(500);
+    text-align: left;
+  }
+}
+.landing-info-title {
+  font-size: u.rem(40);
+  line-height: 0.8;
+
+  @include u.breakpoint-up(medium) {
+    font-size: u.rem(60);
+    line-height: 0.8;
+    
+  }
+}
+.landing-info-description {
+  font-size: u.rem(17);
+
+  @include u.breakpoint-up(medium) {
+    font-size: u.rem(20);
+  }
+}
